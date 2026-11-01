@@ -1,0 +1,254 @@
+:root {
+  --bg: #f3f5ff;
+  --panel: #ffffff;
+  --panel-alt: #eef3ff;
+  --primary: #4f46e5;
+  --primary-dark: #3730a3;
+  --secondary: #10b981;
+  --accent: #f59e0b;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --border: #dfe6f1;
+  --shadow: rgba(79, 70, 229, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(180deg, #eef2ff 0%, #f9fafb 100%);
+  color: var(--text);
+}
+
+.page-shell {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+}
+
+.topbar {
+  background: linear-gradient(135deg, var(--primary) 0%, #6d5ef7 100%);
+  color: white;
+  border-radius: 20px;
+  padding: 32px 28px;
+  box-shadow: 0 16px 40px var(--shadow);
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  opacity: 0.9;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 3rem);
+}
+
+.intro-text {
+  margin: 14px 0 0;
+  font-size: 1.06rem;
+  max-width: 620px;
+  opacity: 0.95;
+}
+
+.content {
+  margin-top: 28px;
+}
+
+.controls {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.search-field,
+.filter-field {
+  flex: 1 1 260px;
+}
+
+input,
+select {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-size: 1rem;
+  background: var(--panel);
+  color: var(--text);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+}
+
+input:focus,
+select:focus {
+  outline: 3px solid rgba(79, 70, 229, 0.18);
+  border-color: var(--primary);
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stat-box {
+  flex: 1 1 180px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+}
+
+.stat-label {
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.stat-box strong {
+  font-size: 1.5rem;
+  color: var(--primary-dark);
+}
+
+.resource-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.resource-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.resource-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.resource-title {
+  margin: 0;
+  font-size: 1.35rem;
+  line-height: 1.3;
+}
+
+.resource-tag {
+  display: inline-flex;
+  background: var(--panel-alt);
+  color: var(--primary-dark);
+  border-radius: 999px;
+  padding: 7px 10px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.resource-description {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.resource-status {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.resource-status.complete {
+  background: rgba(16, 185, 129, 0.12);
+  color: #047857;
+}
+
+.resource-status.incomplete {
+  background: rgba(245, 158, 11, 0.12);
+  color: #b45309;
+}
+
+.toggle-button {
+  margin-top: auto;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.toggle-button:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.toggle-button.incomplete {
+  background: var(--secondary);
+}
+
+.toggle-button.incomplete:hover {
+  background: #059669;
+}
+
+.no-results {
+  background: #fff7ed;
+  color: #9a5d00;
+  border: 1px solid #fed7aa;
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin-bottom: 20px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 640px) {
+  .page-shell {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .topbar {
+    padding: 24px 18px;
+  }
+
+  .resource-card {
+    padding: 16px;
+  }
+
+  .resource-card-header {
+    flex-direction: column;
+  }
+}

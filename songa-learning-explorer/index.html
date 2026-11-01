@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Songa Learning Resource Explorer</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="heading-wrap">
+          <p class="eyebrow">Songa Learning Hub</p>
+          <h1>Songa Learning Resource Explorer</h1>
+          <p class="intro-text">
+            Explore resources, learn new skills, and track your progress.
+          </p>
+        </div>
+      </header>
+
+      <main class="content">
+        <section class="controls" aria-label="Learning resource controls">
+          <label class="search-field" for="search-input">
+            <span class="sr-only">Search resources</span>
+            <input
+              id="search-input"
+              type="search"
+              placeholder="Search resources"
+              aria-label="Search resources"
+            />
+          </label>
+
+          <label class="filter-field" for="category-filter">
+            <span class="sr-only">Filter by category</span>
+            <select id="category-filter" aria-label="Filter by category">
+              <option value="All categories">All categories</option>
+              <option value="JavaScript">JavaScript</option>
+              <option value="CSS">CSS</option>
+              <option value="Git &amp; GitHub">Git &amp; GitHub</option>
+              <option value="Career Skills">Career Skills</option>
+            </select>
+          </label>
+        </section>
+
+        <section class="stats" aria-label="Progress stats">
+          <div class="stat-box">
+            <span class="stat-label">Resources:</span>
+            <strong id="resource-count">0</strong>
+          </div>
+          <div class="stat-box">
+            <span class="stat-label">Completed:</span>
+            <strong id="completed-count">0</strong>
+          </div>
+        </section>
+
+        <section aria-live="polite">
+          <div id="no-results" class="no-results" hidden>
+            No resources match your search. Try another search or category.
+          </div>
+
+          <div id="resource-list" class="resource-list"></div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
